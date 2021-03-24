@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Patient: {{ rxinstance.first_name }} {{ rxinstance.last_name }}</h1>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form1.as_table }}
+    {{ form2.as_table }}
+    {{ form3.as_table }}
+    {{ form4.as_table }}
+    {{ form5.as_table }}
+    {{ form6.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
+
+<model-viewer src="https://cdn.glitch.com/87849e53-9e94-452b-870f-d7035af5acbd%2FRobotExpressive.glb" ios-src="https://cwervo.com/assets/3D-models/logo-3m-scaled.usdz" camera-controls="camera-controls" min-camera-orbit="auto auto 100%" max-camera-orbit="auto auto 100%" min-field-of-view="110deg" max-field-of-view="110deg" autoplay></model-viewer>
+
+<div class="center">
+<button type="submit" id="zoom-in">ZOOM IN</button>
+<button type="submit" id="zoom-out">ZOOM OUT</button>
+</div>
+
+<script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+{% endblock %}
